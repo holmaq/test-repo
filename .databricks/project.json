@@ -1,7 +1,0 @@
-{
-  "host": "https://adb-7914566042080178.18.azuredatabricks.net/",
-  "authType": "azure-cli",
-  "tenantId": "40ae2045-4aa0-4e91-bc1c-a116c39d1ae1",
-  "clusterId": "0816-083626-ysv2ipqj",
-  "workspacePath": "/Users/fransjohan.holmqvist@gmail.com/.ide/DevFolder-dca6a07c"
-}
