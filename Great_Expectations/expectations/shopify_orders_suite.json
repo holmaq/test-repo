@@ -1,0 +1,26 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "shopify_orders_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "product_type"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "total_discount_amount_excluding_taxes_gbp",
+        "max_value": 100,
+        "min_value": 0
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.17.10+0.g0d308ac69.dirty"
+  }
+}

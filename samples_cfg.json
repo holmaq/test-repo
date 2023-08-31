@@ -1,0 +1,41 @@
+{
+    "database": "tpch",
+    "tables": [{
+            "table_name" : "orders",
+                "columns" : [
+                    {
+                        "Name": "o_orderkey",
+                        "Type": "int",
+                        "Tests" : [
+                            {
+                                "test_name": "expect_column_values_to_not_be_null"
+                            }
+                        ] 
+                    },               
+                    {
+                        "Name": "o_orderstatus",
+                        "Type": "string",
+                        "Tests" : [
+                            {
+                                "test_name": "expect_column_values_to_not_be_null"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "o_totalprice",
+                        "Type": "int",
+                        "Tests": [
+                            {
+                                "test_name": "expect_column_values_to_be_between",
+                                "test_params":
+                                {                                
+                                    "start": 100,
+                                    "end": 15000    
+                                }                    
+                            }
+                        ]
+                    }
+                ]
+            }
+    ]
+}
