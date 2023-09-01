@@ -1,3 +1,4 @@
 /.databricks/.databricks.env
 /.databricks/project.json
 /.vscode/settings.json
+.databricks

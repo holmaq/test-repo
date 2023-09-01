@@ -5,4 +5,4 @@ spark = SparkSession.getActiveSession()
 
 df = spark.sql('select * from samples.tpch.orders limit 10')
 
-df.show()
+display(df)
