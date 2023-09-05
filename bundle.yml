@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=bundle_config_schema.json
+bundle:
+  name: johan-test
+
+workspace:
+  host: https://adb-7914566042080178.18.azuredatabricks.net/
+
+
+resources:
+  jobs:
+    johan-test-job:
+      name: johan-test-job
+      tasks:
+        - task_key: first-run
+          spark_python_task:
+            python_file: ./py_method.py
+          existing_cluster_id: 0816-083626-ysv2ipqj
+
+targets:
+  development:
+    default: true
+
