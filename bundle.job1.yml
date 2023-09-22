@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=bundle_config_schema.json
+resources:
+  jobs:
+    johan-test-job:
+      name: johan-test-job
+      tasks:
+        - task_key: first-run
+          spark_python_task:
+            python_file: /Repos/fransjohan.holmqvist@gmail.com/test-repo/Untitled-1.py
+          existing_cluster_id: 0816-083626-ysv2ipqj
+
+        - task_key: second-run
+          depends_on: 
+            - task_key: first-run
+          spark_python_task:
+            python_file: /Repos/fransjohan.holmqvist@gmail.com/test-repo/Untitled-1.py
+          existing_cluster_id: 0816-083626-ysv2ipqj
+
+        - task_key: third-run
+          depends_on: 
+            - task_key: first-run
+          spark_python_task:
+            python_file: /Repos/fransjohan.holmqvist@gmail.com/test-repo/Untitled-1.py
+          existing_cluster_id: 0816-083626-ysv2ipqj
+        
+        - task_key: fact_load
+          depends_on: 
+            - task_key: second-run
+            - task_key: third-run
+          spark_python_task:
+            python_file: /Repos/fransjohan.holmqvist@gmail.com/test-repo/Untitled-1.py
+          existing_cluster_id: 0816-083626-ysv2ipqj
