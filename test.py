@@ -1,11 +1,13 @@
-import duckdb
+from azure.monitor.opentelemetry import configure_azure_monitor
+from logging import getLogger, INFO
 
+configure_azure_monitor(
+    connection_string="InstrumentationKey=a0655b3a-2f50-4cdf-b006-890b3d7fd100;IngestionEndpoint=https://norwayeast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://norwayeast.livediagnostics.monitor.azure.com/",
 
-#duckdb.sql("describe Select * from shopify.csv")
+)
 
-duckdb.sql("select Date, Data_origin_identifier as DataOrigin, Total_Sales_GBP from read_csv_auto('Shopify_20220101_20220118.csv', normalize_names=True) \
-            WHERE Product_Type='Period Pants' \
-           AND Sale_Line_Type = 'PRODUCT' \
-           AND Order_ID = 4377125093544 \
-           ORDER BY Date DESC").show()
+logger = getLogger("__name__")
 
+logger.setLevel("INFO")
+
+logger.info("Information log message")

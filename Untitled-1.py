@@ -1,8 +1,3 @@
-from pyspark.sql import SparkSession
-from pyspark.sql.types import *
+num = "207.6"
 
-spark = SparkSession.getActiveSession()
-
-df = spark.sql('select * from samples.tpch.orders limit 10')
-
-display(df)
+assert num == 207.6
